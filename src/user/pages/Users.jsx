@@ -7,7 +7,7 @@ const Users = () => {
       id: "u1",
       name: "Nowf",
       image:
-        "https://images.pexels.com/photos/30994394/pexels-photo-30994394/free-photo-of-donkey-grazing-on-rocky-moroccan-hillside.jpeg",
+        "https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       places: 3,
     },
   ];
