@@ -43,7 +43,7 @@ const MainNavigation = (props) => {
   return (
     <React.Fragment>
       {drawerIsOpen && (
-        <SideDrawer ref={sideDrawerRef} isOpen={drawerIsOpen}>
+        <SideDrawer isOpen={drawerIsOpen} ref={sideDrawerRef}>
           <nav className="main-navigation__drawer-nav">
             <NavLinks />
           </nav>
