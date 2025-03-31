@@ -1,10 +1,17 @@
 .side-drawer {
   position: fixed;
-  left: 0;
   top: 0;
-  z-index: 100;
+  left: 0; /* Keep it initially positioned to the left side */
   height: 100vh;
   width: 70%;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transform: translateX(-100%); /* Start off-screen */
+  opacity: 0; /* Start invisible */
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.side-drawer.open {
+  transform: translateX(0); /* Slide in */
+  opacity: 1; /* Make it visible */
 }
