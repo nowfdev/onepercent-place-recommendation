@@ -25,5 +25,5 @@ const PlaceItem = (props) => {
     </li>
   );
 };
-
+// Learning Date 05.04.2025
 export default PlaceItem;
