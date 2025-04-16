@@ -17,4 +17,6 @@ const Input = (props) => {
   );
 };
 
+// Manage state input
+
 export default Input;
