@@ -18,5 +18,6 @@ const Input = (props) => {
 };
 
 // Manage state input
+// Input validation
 
 export default Input;
