@@ -44,7 +44,3 @@ export const validate = (value, validators) => {
   }
   return isValid;
 };
-// lEARNING2804
-
-// lEARNING2804
-// lEARNING2804
