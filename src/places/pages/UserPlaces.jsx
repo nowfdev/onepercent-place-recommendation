@@ -6,7 +6,7 @@ import "./PlaceForm.css";
 const DUMMY_PLACES = [
   {
     id: "p1",
-    title: "Etown",
+    title: "Etown1",
     description: "Bosch",
     imageUrl:
       "https://maisonoffice.vn/wp-content/uploads/2021/09/toa-nha-etown-1-building-cong-hoa.jpg",
@@ -19,7 +19,7 @@ const DUMMY_PLACES = [
   },
   {
     id: "p2",
-    title: "Etown",
+    title: "Etown2",
     description: "Bosch",
     imageUrl:
       "https://maisonoffice.vn/wp-content/uploads/2021/09/toa-nha-etown-1-building-cong-hoa.jpg",

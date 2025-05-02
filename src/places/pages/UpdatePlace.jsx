@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
@@ -7,12 +7,14 @@ import {
   VALIDATOR_MINLENGTH,
 } from "../../shared/util/validator";
 import { useForm } from "../../shared/hooks/form-hook";
+import Card from "../../shared/components/UIElements/Card";
+
 import "./PlaceForm.css";
 
 const DUMMY_PLACES = [
   {
     id: "p1",
-    title: "Etown",
+    title: "Etown1",
     description: "Bosch",
     imageUrl:
       "https://maisonoffice.vn/wp-content/uploads/2021/09/toa-nha-etown-1-building-cong-hoa.jpg",
@@ -25,7 +27,7 @@ const DUMMY_PLACES = [
   },
   {
     id: "p2",
-    title: "Etown",
+    title: "Etown2",
     description: "Bosch",
     imageUrl:
       "https://maisonoffice.vn/wp-content/uploads/2021/09/toa-nha-etown-1-building-cong-hoa.jpg",
@@ -59,20 +61,22 @@ const UpdatePlace = () => {
   const identifiedPlace = DUMMY_PLACES.find((p) => p.id === placeId);
 
   useEffect(() => {
-    setFormData(
-      {
-        title: {
-          value: identifiedPlace.title,
-          isValid: true,
+    if (identifiedPlace) {
+      setFormData(
+        {
+          title: {
+            value: identifiedPlace.title,
+            isValid: true,
+          },
+          description: {
+            value: identifiedPlace.description,
+            isValid: true,
+          },
         },
-        description: {
-          value: identifiedPlace.description,
-          isValid: true,
-        },
-      },
-      true
-    );
-    setIsLoading(false);
+        true
+      );
+      setIsLoading(false);
+    }
   }, [setFormData, identifiedPlace]);
 
   const placeUpdatedSubmitHandler = (event) => {
@@ -83,7 +87,9 @@ const UpdatePlace = () => {
   if (!identifiedPlace) {
     return (
       <div className="center">
-        <h2>COULD NOT FIND IT</h2>
+        <Card>
+          <h2>COULD NOT FIND IT</h2>
+        </Card>
       </div>
     );
   }
@@ -125,5 +131,4 @@ const UpdatePlace = () => {
     </form>
   );
 };
-// Update 02.05
 export default UpdatePlace;
