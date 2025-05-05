@@ -131,5 +131,5 @@ const UpdatePlace = () => {
     </form>
   );
 };
-// Temp
+
 export default UpdatePlace;
