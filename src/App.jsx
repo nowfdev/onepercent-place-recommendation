@@ -24,14 +24,26 @@ function App() {
   }, []);
 
   let routes;
-  if(isLoggedIn){
-    routes = ();
+  if (isLoggedIn) {
+    routes = (
+      <Routes>
+        <Route path="/" element={<Users />} />
+        <Route path="/places/new" element={<NewPlace />} />
+        <Route path="/:userId/places" element={<UserPlaces />} />
+        <Route path="/places/:placeId" element={<UpdatePlace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    );
   } else {
     routes = (
-      <Route path="/" element={<Users />} />
-    )
+      <Routes>
+        <Route path="/" element={<Users />} />
+        <Route path="/:userId/places" element={<UserPlaces />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="*" element={<Navigate to="/auth" replace />} />
+      </Routes>
+    );
   }
-
 
   return (
     <AuthContext.Provider
@@ -39,18 +51,7 @@ function App() {
     >
       <Router>
         <MainNavigation />
-        <main>
-          <Routes>
-            <Route path="/" element={<Users />} />
-            <Route path="/:userId/places" element={<UserPlaces />} />
-            <Route path="/places/new" element={<NewPlace />} />
-            <Route path="/places/:placeId" element={<UpdatePlace />} />
-            <Route path="/auth" element={<Auth />} />
-
-            {/* Redirect any unknown routes to / */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </main>
+        <main>{routes}</main>
       </Router>
     </AuthContext.Provider>
   );
