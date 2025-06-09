@@ -26,6 +26,8 @@ const PlaceItem = (props) => {
     console.log("Deleted");
   };
 
+  // COntinue with Node
+
   return (
     <React.Fragment>
       <Modal
